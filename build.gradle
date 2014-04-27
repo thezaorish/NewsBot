@@ -1,0 +1,33 @@
+// http://www.gradle.org/docs/current/userguide/groovy_plugin.html
+// http://stackoverflow.com/questions/22159699/gradle-groovy-and-java-class-dependency-compile
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'war'
+apply plugin: 'idea'
+
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //
+    compile 'org.codehaus.groovy:groovy-all:2.2.2'
+
+    // Web
+    compile 'org.springframework:spring-webmvc:4.0.3.RELEASE'
+
+    // Spring Framework
+    providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
+
+    // Test
+    testCompile 'org.springframework:spring-test:4.0.3.RELEASE'
+    testCompile 'junit:junit:4.11'
+
+    // Logging
+    compile 'org.slf4j:slf4j-api:1.7.7'
+    compile 'ch.qos.logback:logback-classic:1.1.2'
+    compile 'ch.qos.logback:logback-core:1.1.2'
+}
